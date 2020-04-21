@@ -1,0 +1,24 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+          <table align="center"border="2"bgcolor="aqua">
+          <tr>
+              <th colspan="4" style="text-align: center;color: blue;background-color: lightcyan;font-size: 40px;font-family: 'Agency FB'">ALL MEDICINES</th>
+          </tr>
+                    <tr>
+
+                        <th style="background-color: red"> Disease Name</th>
+                        <th style="background-color: red;text-align: center"> Symptoms</th>
+                        <th style="background-color: red">MEDICINE NAME</th>
+                        <th style="background-color: red">MEDICINE DESCRIPTION</th>
+
+                    </tr>
+                    {% for x in dm %}
+                        <tr>
+                        <th>{{ x.disease.des_name }}</th>
+                        <th>{{ x.disease.des_sym }}</th>
+                        <th>{{ x.medcine_name }}</th>
+                        <th>{{ x.medcine_description }}</th>
+                        </tr>
+                    {% endfor %}
+                </table>
+{% endblock %}

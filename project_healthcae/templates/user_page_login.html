@@ -1,0 +1,29 @@
+{% extends "hompage.html" %}
+{% block common %}
+    <form action="{% url 'userhome_login' %}"method="post">
+        {% csrf_token %}
+    <table align="center"border="0"bgcolor="#ffe4e1">
+    <tr>
+        <th style="text-align: center;color: darkcyan;font-size: 40px;font-family: 'Agency FB'">USER LOGIN PAGE</th>
+    </tr>
+    <tr>
+        <th>USER NAME:
+            <input type="email"placeholder="user name"required name="username">
+        </th>
+    </tr>
+    <tr>
+        <th>PASSWORD:
+            <input type="password"placeholder="password"required name="password">
+        </th>
+    </tr>
+        <tr>
+            <th style="text-align: center">
+                <button type="submit">Login</button>
+            </th>
+        </tr>
+    </table>
+    </form>
+    {% for x in messages %}
+        <h1 style="text-align: center">{{ x }}</h1>
+    {% endfor %}
+{% endblock %}

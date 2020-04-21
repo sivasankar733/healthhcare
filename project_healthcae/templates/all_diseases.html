@@ -1,0 +1,22 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+          <table align="center"border="2"bgcolor="aqua">
+          <tr>
+              <th colspan="4" style="text-align: center;color: blue;background-color: lightcyan;font-size: 40px;font-family: 'Agency FB'">ALL DISEASES</th>
+          </tr>
+                    <tr>
+                        <th style="background-color: red">DISEASE NAME</th>
+                        <th style="background-color: red">SYMPTOMS</th>
+                        <th style="background-color: red">UPDATE</th>
+                        <th style="background-color: red">DELETE</th>
+                    </tr>
+                    {% for x in dm %}
+                        <tr>
+                        <th>{{ x.des_name }}</th>
+                        <th>{{ x.des_sym }}</th>
+                        <th><a href="{% url 'update_disease' %}?dname={{ x.des_name }}&dsym={{ x.des_sym }}" class="btn btn-primar">yes</a></th>
+                        <th><a href="{% url 'delete_disease' %}?dname={{ x.des_name }}" class="btn btn-primar">yes delete</a></th>
+                        </tr>
+                    {% endfor %}
+                </table>
+{% endblock %}

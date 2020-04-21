@@ -1,0 +1,108 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>health-care</title>
+      <link rel="stylesheet"href="{% static 'css/healthcare.css' %}"type="text/css">
+  </head>
+  <body>
+    <table align="center"border="0">
+        <tr >
+
+            <td align="center"style="background-color: green;color: red;font-size: 30px;font-style: oblique">HEALTH CARE ADVIS0R</td>
+        </tr>
+        <tr>
+            <td style="background-color:paleturquoise;color:darkblue">
+                <marquee>HAPPINESS IS THE HIGHEST FORM OF HEALTH ,,,,,,,,,,,,,,,,,siva</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table align="center"border="0">
+                <tr>
+                    <td>
+                        <a href="{% url 'index' %}" class="btn btn-primary btn-sm">Home Page</a>
+                        <a href="{% url 'user_registration' %}" class="btn btn-primary btn-sm">User Registration</a>
+                        <button type="button" class="btn btn-primary btn-sm">Admin Login</button>
+                        <button type="button" class="btn btn-primary btn-sm">User Login</button>
+                        <button type="button" class="btn btn-primary btn-sm">Report</button>
+                        <button type="button" class="btn btn-primary btn-sm">Contact Us</button>
+                    </td>
+                </tr>
+                    <tr>
+                        <td>
+                            <form action="{% url 'user_registration' %}"method="post" >
+                                {% csrf_token %}
+                            <table align="center"border="0"width="400"style="background-color: greenyellow">
+                                <tr>
+                        <td style="color: red;font-size: 20px"align="center">USER REGISTRATION</td>
+                        </tr>
+                    <tr>
+                        <td>Id No:{{ ul.idno }}</td>
+                        <td>{{ ul.idno.errors }}</td>
+                    </tr>
+                    <tr>
+                        <td>First Name:{{ ul.firstname }}</td>
+                        <td>{{ ul.firstname.errors }}</td>
+                    </tr>
+                    <tr><td>Last Name:{{ ul.lastname }}</td></tr>
+                    <td>{{ ul.lastname.errors }}</td>
+                    <tr>
+                        <td>Age:{{ ul.age }}</td>
+                        <td>{{ ul.age.errors }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender:{{ ul.gender }}</td>
+                        <td>{{ ul.gender.errors }}</td>
+                    </tr>
+                    <tr>
+                        <td>Address:{{ ul.address }}</td>
+                        <td>{{ ul.address.errors }}</td>
+                    </tr>
+                    <tr>
+                        <td>User Name:{{ ul.usermname }}</td>
+                        <td>{{ ul.usermname.errors }}</td>
+                    </tr>
+                    <tr>
+                        <td>Password:{{ ul.password }}</td>
+                        <td>{{ ul.password.errors }}</td>
+                    </tr>
+                                <tr>
+                                    <td>
+                                        <button type="submit" class="btn btn-danger">Submit</button>
+                                        <a href="{% url 'index' %}" class="btn btn-danger">Reset</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            </form>
+
+                        </td>
+                    </tr>
+
+
+
+            </table>
+                {% for x in messages %}
+                                <h3 align="center"style="color: red">{{ x }}</h3>
+                            {% endfor %}
+
+            </td>
+        </tr>
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+{% block common %}
+{% endblock %}
+</html>

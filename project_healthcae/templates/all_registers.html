@@ -1,0 +1,24 @@
+{% extends "adminhome.html" %}
+{% block adminhome %}
+    <table align="center"border="2"bgcolor="#20b2aa">
+        <tr>
+            <th colspan="5" style="text-align: center;color: magenta;font-family: Batang;font-size: 40px;background-color: azure"> ALL REGISTERED USERS</th>
+        </tr>
+        <tr>
+            <th style="text-align: center;color: red;font-family: Batang;font-size: 30px">FIRST NAME</th>
+            <th style="text-align: center;color: red;font-family: Batang;font-size: 30px">LAST NAME</th>
+            <th style="text-align: center;color: red;font-family: Batang;font-size: 30px">AGE</th>
+            <th style="text-align: center;color: red;font-family: Batang;font-size: 30px">GENDER</th>
+            <th style="text-align: center;color: red;font-family: Batang;font-size: 30px">ADDRESS</th>
+        </tr>
+    {% for x in rmdata %}
+        <tr>
+        <th>{{ x.firstname }}</th>
+        <th>{{ x.lastname }}</th>
+        <th>{{ x.age }}</th>
+        <th>{{ x.gender }}</th>
+        <th>{{ x.address }}</th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
